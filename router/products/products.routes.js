@@ -1,13 +1,16 @@
 const express=require('express');
-const products = require('../../model/products')
+const Products = require('../../api/products.api');
 
 const router = express.Router();
 
 
-//Routes
-router.get('/:id',(req,res) =>{
+const products = new Products()
 
-});
+//Routes
+
+router.get('/',products.getAll);
+
+router.get('/:id',products.getById);
 
 router.post('/',(req,res) =>{
 

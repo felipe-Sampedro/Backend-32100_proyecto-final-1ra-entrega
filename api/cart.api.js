@@ -1,36 +1,24 @@
-const products = [
-    {
-      id: 1,
-      name: 'Escuadra',
-      price: 323.45,
-      imagen: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg'
-    },
-    {
-      id: 2,
-      nombre: 'Calculadora',
-      precio: 234.56,
-      imagen: 'https://exitocol.vtexassets.com/arquivos/ids/257195/Calculadora-Cientifica-Graficadora-Texas-Ti-nspire-cxcas-3d.jpg?v=637002371419830000'
-    },
-  ]
-  
-  class Products {
-    static lastProductId = products[products.length - 1].id;
+const {promises:fs} = require('fs')
+
+
+class Contenedor {
+    static lastProductId = carrito[carrito.length - 1].id;
     
     constructor() {
-      this.list = products;
+      this.list = carrito;
     }
   
     getAll() {
       return this.list;
     }
   
-    getById(productId) {
-      return this.list.find(product => product.id === +productId);
+    getById(carritoId) {
+      return this.list.find(carrito => carrito.id === +carritoId);
     }
   
     save(product) {
-      const { nombre, precio, imagen } = product;
-      if ( !nombre || !precio || !imagen) {
+      const { timeStamp, productos} = product;
+      if ( !nombre || !precio) {
         return null;
       }
       Products.lastProductId++;
@@ -71,4 +59,4 @@ const products = [
     }
   }
   
-  module.exports = Products;
+  module.exports = Contenedor;

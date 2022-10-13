@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Escuadra",
+      "description":"sdgsdfgsdfgsdg",
+      "code":402,
+      "image": 323.45,
+      "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
+      "stock": 2
+    },
+    {
+      "id": 2,
+      "name": "Escuadra",
+      "description":"fsdf",
+      "code": 410,
+      "image": 323.45,
+      "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
+      "stock": 2
+    }
+  ]
+}
