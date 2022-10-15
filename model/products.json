@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 1,
+      "timestamp":345346345,
       "name": "Escuadra",
       "description":"sdgsdfgsdfgsdg",
       "code":402,
@@ -11,6 +12,7 @@
     },
     {
       "id": 2,
+      "timestamp":345346345,
       "name": "Escuadra",
       "description":"fsdf",
       "code": 410,

@@ -3,7 +3,6 @@ const Products = require('../../api/products.api');
 
 const router = express.Router();
 
-
 const products = new Products()
 
 //Routes
@@ -12,17 +11,11 @@ router.get('/',products.getAll);
 
 router.get('/:id',products.getById);
 
-router.post('/',(req,res) =>{
+router.post('/',products.save);
 
-});
+router.put('/:id',products.updateById);
 
-router.put('/:id',(req,res) =>{
-
-});
-
-router.delete('/:id',(req,res) =>{
-
-});
+router.delete('/:id',products.deleteById);
 
 
 module.exports = router;
