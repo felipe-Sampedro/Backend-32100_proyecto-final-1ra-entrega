@@ -1,22 +1,23 @@
 const {promises:fs} = require('fs')
+const cart_list = require("../model/carrito.json")
 
 
 class Contenedor {
     static lastProductId = carrito[carrito.length - 1].id;
     
     constructor() {
-      this.list = carrito;
+      this.list = cart_list;
     }
   
-    getAll() {
+    getAllCart() {
       return this.list;
     }
   
-    getById(carritoId) {
+    getByIdCart(carritoId) {
       return this.list.find(carrito => carrito.id === +carritoId);
     }
   
-    save(product) {
+    saveCart(product) {
       const { timeStamp, productos} = product;
       if ( !nombre || !precio) {
         return null;
@@ -34,7 +35,7 @@ class Contenedor {
     };
 
 
-    updateById(productId, product) {
+    updateByIdCart(productId, product) {
       const productIndex = this.list.findIndex((producto) => producto.id === +productId);
       if (productIndex < 0) return null;
       const {
@@ -52,7 +53,7 @@ class Contenedor {
       return updatedProduct;
     }
   
-    deleteById(productId) {
+    deleteByIdCart(productId) {
       const productIndex = this.list.findIndex((producto) => producto.id === +productId);
       if (productIndex < 0) return null;
       return this.list.splice(productIndex, 1);

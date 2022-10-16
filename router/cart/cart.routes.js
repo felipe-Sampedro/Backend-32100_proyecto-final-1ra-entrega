@@ -1,30 +1,24 @@
 const express=require('express');
+const Contenedor = require('../../api/cart.api');
 const cart = require('../../model/carrito')
 
 const router = express.Router();
 
+const contenedor = new Contenedor
+
 
 //Routes
 
-router.post('/',(req,res) =>{
+router.get('/:id',contenedor.getByIdCart);
 
-});
+router.post('/',contenedor.saveCart);
 
-router.delete('/:id',(req,res) =>{
+router.delete('/:id',contenedor.deleteByIdCart);
 
-});
 
-router.get('/:id/productos',(req,res) =>{
+router.post('/:id/productos/:id_prod',);
 
-});
-
-router.post('/:id/productos/:id_prod',(req,res) =>{
-
-});
-
-router.delete('/:id/productos/:id_prod',(req,res) =>{
-
-});
+router.delete('/:id/productos/:id_prod',);
 
 
 

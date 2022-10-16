@@ -5,8 +5,8 @@
             "timestamp": 1665935576565,
             "name": "Camiseta",
             "description": "100% algodon egipcio",
-            "code": 402,
-            "image": 323.45,
+            "code": 101,
+            "image": 45000,
             "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
             "stock": 8
           },
@@ -15,18 +15,18 @@
             "timestamp": 1669945275136,
             "name": "Pantaloneta",
             "description": "Con malla interna",
-            "code": 410,
-            "image": 323.45,
+            "code": 201,
+            "image": 55000,
             "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
             "stock": 2
           },
           {
             "id": 3,
             "timestamp": 1669945275136,
-            "name": "guantes",
-            "description": "Con malla interna",
-            "code": 410,
-            "image": 323.45,
+            "name": "guantes deportivos",
+            "description": "A base de naylon",
+            "code": 901,
+            "image": 15000,
             "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
             "stock": 11
           }   
