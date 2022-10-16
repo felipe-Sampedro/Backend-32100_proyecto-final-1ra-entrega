@@ -8,7 +8,7 @@
             "code": 402,
             "image": 323.45,
             "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
-            "stock": 2
+            "stock": 8
           },
           {
             "id": 2,
@@ -19,7 +19,17 @@
             "image": 323.45,
             "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
             "stock": 2
-          }
+          },
+          {
+            "id": 3,
+            "timestamp": 1669945275136,
+            "name": "guantes",
+            "description": "Con malla interna",
+            "code": 410,
+            "image": 323.45,
+            "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
+            "stock": 11
+          }   
     ],
 
     "carrito":[

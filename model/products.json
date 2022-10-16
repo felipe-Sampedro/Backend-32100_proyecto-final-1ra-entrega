@@ -8,7 +8,7 @@
       "code": 402,
       "image": 323.45,
       "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
-      "stock": 2
+      "stock": 8
     },
     {
       "id": 2,
@@ -19,15 +19,6 @@
       "image": 323.45,
       "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
       "stock": 2
-    },
-    {
-      "timestamp": 1665955915974,
-      "name": "guantes",
-      "description": "reforzados con nailon",
-      "code": 111977,
-      "image": "https://www.califishingstore.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-16-at-9.12.16-AM-5.jpeg",
-      "price": 35500,
-      "stock": 4
     }
   ]
 }

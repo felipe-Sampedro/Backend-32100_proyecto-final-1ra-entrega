@@ -69,7 +69,7 @@ class Products {
             return res.status(404).json({ state: "error", error: `the product wasn't found`});            
         };
         const updatedProduct = {
-            id: this.list[productIndex].id,
+            id: data.products[productIndex].id,
             timestamp:Date.now(),
             name,
             description,
@@ -86,16 +86,16 @@ class Products {
   
     deleteById = async (req, res) =>{
         const data = await this.produList();
-        const {id}= req.params
-        const filter_prod = data.products.find(p => p.id === +id)        
-        if (filter_pro < 0) {
+        const {id}= req.params    
+        const productIndex = data.products.findIndex((prod) => prod.id === +id);
+        if (productIndex < 0) {
             return res.status(404).json({ state: "error", error: `the product wasn't found`});            
         };
-        const productIndex = data.products.findIndex((prod) => prod.id === +id);
-        products_left = data.products.splice(filter_prod, 1);
-        const dataToString = JSON.stringify(products_left, null, 2);
+        console.log(productIndex);
+        data.products.splice(productIndex, 1);
+        const dataToString = JSON.stringify(data, null, 2);
         const datan = await fs.writeFile(this.list,dataToString,'utf-8');
-        return res.send({ state: "success", result: productIndex });
+        return res.send({ state: "success", result: "the product has been deleted"});
     }
   }
   
