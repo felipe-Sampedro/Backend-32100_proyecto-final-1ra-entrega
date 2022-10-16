@@ -57,14 +57,14 @@ class Products {
 
 
     updateById = async (req, res) =>{
-        data = await this.produList();
+        const data = await this.produList();
         const {id}= req.params
         const { name, description, code, price, image, stock } = req.body;
         
         if ( !name || !description || !code || !price || !image || !stock) {
             return res.status(404).json({ state: "error", error: `the product doesn't have all the info`});
         }  
-        const productIndex = this.list.findIndex((prod) => prod.id === +productId);
+        const productIndex = data.products.findIndex((prod) => prod.id === +id);
         if (productIndex < 0) {
             return res.status(404).json({ state: "error", error: `the product wasn't found`});            
         };
@@ -78,21 +78,21 @@ class Products {
             price,
             stock
         };
-        this.list[productIndex] = updatedProduct;
+        data.products[productIndex] = updatedProduct;
         const dataToString = JSON.stringify(data, null, 2);
         const datan = await fs.writeFile(this.list,dataToString,'utf-8');
         return res.send({ state: "success", result: updatedProduct });
     }
   
     deleteById = async (req, res) =>{
-        data = await this.produList();
+        const data = await this.produList();
         const {id}= req.params
         const filter_prod = data.products.find(p => p.id === +id)        
         if (filter_pro < 0) {
             return res.status(404).json({ state: "error", error: `the product wasn't found`});            
         };
-        const productIndex = this.list.findIndex((prod) => prod.id === +id);
-        products_left = data.products.splice(productIndex, 1);
+        const productIndex = data.products.findIndex((prod) => prod.id === +id);
+        products_left = data.products.splice(filter_prod, 1);
         const dataToString = JSON.stringify(products_left, null, 2);
         const datan = await fs.writeFile(this.list,dataToString,'utf-8');
         return res.send({ state: "success", result: productIndex });

@@ -21,14 +21,13 @@
       "stock": 2
     },
     {
-      "id": null,
-      "timestamp": 1665945575535,
-      "name": "guantes deportivos",
-      "description": "reforzados",
-      "code": 111984,
+      "timestamp": 1665955915974,
+      "name": "guantes",
+      "description": "reforzados con nailon",
+      "code": 111977,
       "image": "https://www.califishingstore.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-16-at-9.12.16-AM-5.jpeg",
-      "price": 35000,
-      "stock": 11
+      "price": 35500,
+      "stock": 4
     }
   ]
 }
