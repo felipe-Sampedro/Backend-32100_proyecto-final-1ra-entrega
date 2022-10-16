@@ -2,23 +2,33 @@
   "products": [
     {
       "id": 1,
-      "timestamp":345346345,
-      "name": "Escuadra",
-      "description":"sdgsdfgsdfgsdg",
-      "code":402,
+      "timestamp": 1665935576565,
+      "name": "Camiseta",
+      "description": "100% algodon egipcio",
+      "code": 402,
       "image": 323.45,
       "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
       "stock": 2
     },
     {
       "id": 2,
-      "timestamp":345346345,
-      "name": "Escuadra",
-      "description":"fsdf",
+      "timestamp": 1669945275136,
+      "name": "Pantaloneta",
+      "description": "Con malla interna",
       "code": 410,
       "image": 323.45,
       "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
       "stock": 2
+    },
+    {
+      "id": null,
+      "timestamp": 1665945575535,
+      "name": "guantes deportivos",
+      "description": "reforzados",
+      "code": 111984,
+      "image": "https://www.califishingstore.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-16-at-9.12.16-AM-5.jpeg",
+      "price": 35000,
+      "stock": 11
     }
   ]
 }
