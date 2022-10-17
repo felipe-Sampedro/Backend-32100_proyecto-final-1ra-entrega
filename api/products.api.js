@@ -24,7 +24,7 @@ class Products {
         const {id} = req.params;
         const filter_prod = data.products.find(p => p.id === +id)
         if (!filter_prod) {
-            return res.status(404).json({ state: "error", error: `Produccto no id: ${id} no encontrado`});
+            return res.status(404).json({ state: "error", error: `Product with id: ${id} doesn't found`});
           } 
         return res.send({ state: "success", result: filter_prod });
     }
@@ -38,7 +38,7 @@ class Products {
         }
         Products.lastProductId++;
         const newProduct = {
-            id: Products.lastProductId,
+            id: lastProductId++,
             timestamp:Date.now(),
             name,
             description,

@@ -1,8 +1,8 @@
 const express = require('express');
-const { connect } = require('./router/app.routers');
+const { connect } = require('./router/app.routes');
 const app = express();
 const PORT = process.env.PORT || 8080
-const apiRouetes = require('./router/app.routers')
+const apiRouetes = require('./router/app.routes')
 
 
 

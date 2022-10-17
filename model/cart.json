@@ -1,5 +1,5 @@
 {
-"carrito":[
+  "cart": [
     {
       "id": 1,
       "timeStamp": "12/10/2022 16:24 p.m",
@@ -32,7 +32,7 @@
       "productos": [
         {
           "id": 1,
-          "timeStamp": "12/10/2022 18:02 p.m",
+          "timeStamp": 1666022033151,
           "name": "pantaloneta",
           "description": "100% algodon",
           "codigo": 66129,
@@ -42,13 +42,29 @@
         },
         {
           "id": 2,
-          "timeStamp": "12/10/2022 18:14 p.m",
+          "timeStamp": 1666022043250,
           "name": "medias",
           "description": "linea deportiva",
           "codigo": 33372,
           "thumbnail": "https://assets.adidas.com/images/w_600,f_auto,q_auto/00bf8199e559467f8731ada1002bf0e5_9366/Medias_Deportivas_Malla_Estampadas_Largo_a_Media_Pantorrilla_Blanco_HA0110_03_standard.jpg",
           "price": 12000,
           "stock": 22
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "timeStamp": 1666037431434,
+      "productos": [
+        {
+          "id": 1,
+          "timestamp": 1665935576565,
+          "name": "Camiseta",
+          "description": "100% algodon egipcio",
+          "code": 402,
+          "image": 323.45,
+          "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
+          "stock": 8
         }
       ]
     }
