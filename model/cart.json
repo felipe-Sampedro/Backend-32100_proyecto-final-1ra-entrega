@@ -65,6 +65,16 @@
           "image": 323.45,
           "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
           "stock": 8
+        },
+        {
+          "id": 2,
+          "timestamp": 1665935576565,
+          "name": "Camiseta",
+          "description": "100% algodon egipcio",
+          "code": 402,
+          "image": 323.45,
+          "price": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg",
+          "stock": 8
         }
       ]
     }

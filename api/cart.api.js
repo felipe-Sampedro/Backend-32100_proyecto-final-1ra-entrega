@@ -67,10 +67,10 @@ class Container {
       const prodIndex = +prodData.products.findIndex(p=>p.id === +id_prod)
 
       if ( cartIndex < 0) {
-        return res.status(404).send({ state: "error", error: `Cart with id: ${id_cart} doesn't found`});
+        return res.status(404).send({ state: "error", error: `Cart with id: ${id_cart} doesn't exist`});
       }
       if (prodIndex < 0) {
-        return res.status(404).send({ state: "error", error: `Product with id: ${id_cart} doesn't exist`});
+        return res.status(404).send({ state: "error", error: `Product with id: ${id_prod} doesn't exist`});
       }
 
       data_Cart[cartIndex].productos.push(prodData.products[prodIndex])
@@ -79,30 +79,52 @@ class Container {
       
       return res.send({state:"Succes",result: data_Cart});
     };
-
-    // updateByIdCart(productId, product) {
-    //   const productIndex = this.list.findIndex((producto) => producto.id === +productId);
-    //   if (productIndex < 0) return null;
-    //   const {
-    //     nombre,
-    //     precio,
-    //     imagen
-    //   } = product;
-    //   const updatedProduct = {
-    //     id: this.list[productIndex].id,
-    //     nombre,
-    //     precio,
-    //     imagen
-    //   };
-    //   this.list[productIndex] = updatedProduct;
-    //   return updatedProduct;
-    // }
   
-    // deleteByIdCart(productId) {
-    //   const productIndex = this.list.findIndex((producto) => producto.id === +productId);
-    //   if (productIndex < 0) return null;
-    //   return this.list.splice(productIndex, 1);
-    // }
+    deleteByIdCart = async (req,res)=> {
+      const {id} = req.params 
+      const data_C = await this.cartList();
+      const carttIndex = data_C.cart.findIndex((cart) => cart.id === +id);
+      if (carttIndex < 0) {
+        return res.status(404).send({ state: "error", error: `Cart with id: ${id} doesn't exist`});
+      }
+
+      data_C.cart.splice(carttIndex,1)
+      const dataToStringC = JSON.stringify(data_C,null,2)
+      const datan = await fs.writeFile(this.list,dataToStringC,'utf-8')
+
+      return res.send({state:"success", resul:"the cart has been deleted"})
+    }
+
+
+    deleteByIdCart_Prods = async (req,res)=> {
+      const data_C = await this.cartList();
+      const {id_cart,id_prod} = req.params 
+      const cartIndex = data_C.cart.findIndex(ci=>ci.id === +id_cart)
+      // const prodIndex = +prodData.products.findIndex(p=>p.id === +id_prod)
+      if (cartIndex < 0) {
+        return res.status(404).send({ state: "error", error: `Cart with id: ${id} doesn't exist`});
+      }
+      const prodIndex = data_C.cart[cartIndex].productos.findIndex(p=>p.id===+id_prod)
+      
+      if (prodIndex < 0) {
+        return res.status(404).send({ state: "error", error: `Product with id: ${id_prod} in cart with id: ${id_cart} doesn't exist`});
+      }
+
+
+      console.log(data_C.cart[2]);
+      console.log(prodIndex);
+      
+      data_C.cart[cartIndex].productos.splice([prodIndex],1)
+      
+      // const carttIndex = data_C.cart.findIndex((cart) => cart.id === +id);
+
+      // data_C.cart.splice(carttIndex,1)
+      // const dataToStringC = JSON.stringify(data_C,null,2)
+      // const datan = await fs.writeFile(this.list,dataToStringC,'utf-8')
+
+      return res.send({state:"success", resul:`the Item with id: ${id_prod} of the cart with id: ${id_cart} has been deleted`})
+    }
+
   }
   
   module.exports = Container;
