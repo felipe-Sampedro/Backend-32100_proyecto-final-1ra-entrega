@@ -111,16 +111,15 @@ class Container {
       }
 
 
-      console.log(data_C.cart[2]);
-      console.log(prodIndex);
+      // console.log(data_C.cart[2]);
+      // console.log(prodIndex);
       
       data_C.cart[cartIndex].productos.splice([prodIndex],1)
       
-      // const carttIndex = data_C.cart.findIndex((cart) => cart.id === +id);
+      console.log(data_C.cart[cartIndex]);
 
-      // data_C.cart.splice(carttIndex,1)
-      // const dataToStringC = JSON.stringify(data_C,null,2)
-      // const datan = await fs.writeFile(this.list,dataToStringC,'utf-8')
+      const dataToStringC = JSON.stringify(data_C,null,2)
+      const datan = await fs.writeFile(this.list,dataToStringC,'utf-8')
 
       return res.send({state:"success", resul:`the Item with id: ${id_prod} of the cart with id: ${id_cart} has been deleted`})
     }

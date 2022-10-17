@@ -12,7 +12,9 @@ app.use(express.urlencoded({extended:true}))
 
 //Routes
 app.use('/api',apiRouetes)
-
+app.use('*', (req, res)=>{
+    res.status(404).send({error:-2, descripcion:`ruta ${req.baseUrl} metodo ${req.method} no implementada`})
+});
 
 const connectedServer = app.listen(PORT, ()=>{
     console.log("Ready an running on port", PORT)
