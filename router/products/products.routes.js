@@ -1,9 +1,10 @@
 const express=require('express');
-const Products = require('../../api/products.api');
+// const Products = require('../../api/products.api');
+const products = require('../../controller/products.controller');
 
 const router = express.Router();
 
-const products = new Products()
+// const products = new Products()
 
 //Routes
 

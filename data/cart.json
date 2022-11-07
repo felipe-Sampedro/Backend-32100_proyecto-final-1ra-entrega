@@ -1,0 +1,82 @@
+{
+    "cart": [
+      {
+        "id": 1,
+        "timeStamp": "12/10/2022 16:24 p.m",
+        "productos": [
+          {
+            "id": 1,
+            "timestamp": 1665935576565,
+            "name": "Camiseta",
+            "description": "100% algodon egipcio",
+            "code": 100,
+            "image": "https://www.texor.co/wp-content/uploads/2019/11/T-SHIRT-BLANCA.jpg",
+            "price": 45000,
+            "stock": 25
+          },
+          {
+            "id": 3,
+            "timestamp": 1669945275136,
+            "name": "Gorra",
+            "description": "Linea de Basket color roja",
+            "code": 500,
+            "image": "https://static4.depositphotos.com/1000261/339/i/450/depositphotos_3394871-stock-photo-red-baseball-cap.jpg",
+            "price": 25000,
+            "stock": 8
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "timeStamp": "12/10/2022 17:58 p.m",
+        "productos": [
+          {
+            "id": 2,
+            "timestamp": 1669945275136,
+            "name": "Pantaloneta",
+            "description": "Con malla interna reforzada",
+            "code": 200,
+            "image": "https://http2.mlstatic.com/D_NQ_NP_874926-MCO45776109579_042021-W.jpg",
+            "price": 50000,
+            "stock": 14
+          },
+          {
+            "id": 4,
+            "timestamp": 1669945275136,
+            "name": "Medias",
+            "description": "Con malla interna",
+            "code": 600,
+            "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/00bf8199e559467f8731ada1002bf0e5_9366/Medias_Deportivas_Malla_Estampadas_Largo_a_Media_Pantorrilla_Blanco_HA0110_03_standard.jpg",
+            "price": 18000,
+            "stock": 16
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "timeStamp": 1666037431434,
+        "productos": [
+          {
+            "id": 3,
+            "timestamp": 1669945275136,
+            "name": "Gorra",
+            "description": "Linea de Basket color roja",
+            "code": 500,
+            "image": "https://static4.depositphotos.com/1000261/339/i/450/depositphotos_3394871-stock-photo-red-baseball-cap.jpg",
+            "price": 25000,
+            "stock": 8
+          },
+          {
+            "id": 5,
+            "timestamp": 1669945275136,
+            "name": "Guantes",
+            "description": "Antideslizante tipografico linea dorada",
+            "code": 900,
+            "image": "https://www.califishingstore.com/wp-content/uploads/2021/03/WhatsApp-Image-2021-03-16-at-9.12.16-AM-5.jpeg",
+            "price": 22000,
+            "stock": 10
+          }
+        ]
+      }
+    ]
+  }
