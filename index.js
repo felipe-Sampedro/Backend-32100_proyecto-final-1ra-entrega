@@ -4,8 +4,6 @@ const app = express();
 const PORT = process.env.PORT || 8080
 const apiRouetes = require('./router/app.routes')
 
-
-
 //Middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))

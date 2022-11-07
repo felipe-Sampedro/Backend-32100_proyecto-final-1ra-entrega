@@ -1,5 +1,5 @@
 const {promises:fs} = require ('fs');
-const data_products = ("./model/products.json"); 
+const data_products = ('./data/products.json'); 
 
 class Products {
     static lastProductId = data_products[data_products.length - 1].id;
@@ -16,15 +16,15 @@ class Products {
 
     getAll = async () => { 
         const catalogy = await this.produList()
-        return res.send(catalogy);
+        return catalogy;
     }
   
-    getById = async () => {
+    getById = async (id,datos) => {
         const data = await this.produList();
         return data.products.find(p => p.id === +id);
     }
   
-    save = async (id, data) => {
+    save = async (id, datos) => {
         const data = await this.produList();
         const { name, description, code, price, image, stock } = data;
         const newProduct = {
@@ -44,7 +44,7 @@ class Products {
     };
 
 
-    updateById = async (id, data) =>{
+    updateById = async (id, datos) =>{
         const data = await this.produList();
         const { name, description, code, price, image, stock } = data;
         
@@ -64,13 +64,13 @@ class Products {
         return updatedProduct;
     }
   
-    deleteById = async (id, data) =>{
+    deleteById = async (id, datos) =>{
         const data = await this.produList();
         const productIndex = data.products.findIndex((prod) => prod.id === +id);
         data.products.splice(productIndex, 1);
         const dataToString = JSON.stringify(data, null, 2);
         const datan = await fs.writeFile(this.list,dataToString,'utf-8');
-        return res.send({ state: "success", result: "the product has been deleted"});
+        return { state: "success", result: "the product has been deleted"}
     }
   }
   
