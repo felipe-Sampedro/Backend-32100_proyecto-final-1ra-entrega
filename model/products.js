@@ -2,8 +2,8 @@ const {promises:fs} = require ('fs');
 const data_products = ('./data/products.json'); 
 
 class Products {
-    static lastProductId = data_products[data_products.length - 1].id;
-    
+    // static lastProductId = data.products[data.products.length-1].id;
+
     constructor() {
       this.list = data_products;
     }
@@ -24,11 +24,12 @@ class Products {
         return data.products.find(p => p.id === +id);
     }
   
-    save = async (id, datos) => {
+    save = async (datos) => {
         const data = await this.produList();
-        const { name, description, code, price, image, stock } = data;
+        const newid = data.products[data.products.length-1].id
+        const { name, description, code, price, image, stock } = datos;
         const newProduct = {
-            id: lastProductId++,
+            id: newid + 1,
             timestamp:Date.now(),
             name,
             description,
@@ -46,8 +47,10 @@ class Products {
 
     updateById = async (id, datos) =>{
         const data = await this.produList();
-        const { name, description, code, price, image, stock } = data;
+        const { name, description, code, price, image, stock } = datos;
         
+        const productIndex = data.products.findIndex((prod) => prod.id === +id);
+
         const updatedProduct = {
             id: data.products[productIndex].id,
             timestamp:Date.now(),
@@ -64,7 +67,7 @@ class Products {
         return updatedProduct;
     }
   
-    deleteById = async (id, datos) =>{
+    deleteById = async (id) =>{
         const data = await this.produList();
         const productIndex = data.products.findIndex((prod) => prod.id === +id);
         data.products.splice(productIndex, 1);

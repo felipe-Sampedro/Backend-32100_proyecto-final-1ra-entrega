@@ -22,15 +22,14 @@ save = async (req, res) => {
     if ( !name || !description || !code || !price || !image || !stock) {
         return res.status(404).json({ state: "error", error: `the product doesn't have all the info`});
     }
-    const datas = await products.getAll()
-    datas.products.push(newProduct);
-    return res.send({ state: "success", result: newProduct });
+    const data = await products.save(req.body)
+    return res.send({ state: "success", result: "the product have been saved" });
 };
 
 
 updateById = async (req, res) =>{
     const {id}= req.params
-    const { name, description, code, price, image, stock } = req.body;
+    const {name, description, code, price, image, stock} = req.body;
     
     if ( !name || !description || !code || !price || !image || !stock) {
         return res.status(404).json({ state: "error", error: `the product doesn't have all the info`});
@@ -41,23 +40,21 @@ updateById = async (req, res) =>{
         return res.status(404).json({ state: "error", error: `the product wasn't found`});            
     };
 
-    const updatedProduct = products.getById(id)
+    const updatedProduct = products.updateById(id,req.body)
     return res.send({ state: "success", result: updatedProduct });
 }
 
 
 deleteById = async (req, res) =>{
     const {id}= req.params    
-    const datad = await products.getAll()
-    const productIndex = datad.products.findIndex((prod) => prod.id === +id);
+    const data = await products.getAll()
+    const productIndex = data.products.findIndex((prod) => prod.id === +id);
     if (productIndex < 0) {
         return res.status(404).json({ state: "error", error: `the product wasn't found`});            
     };
-    console.log(productIndex);
-    datad.products.splice(productIndex, 1);
-    return res.send({ state: "success", result: "the product has been deleted"});
+    products.deleteById(id)
+    return res.send({ state: "success", result: "controller - the product has been deleted"});
 }
-  
   
   module.exports = {
     getAll,
